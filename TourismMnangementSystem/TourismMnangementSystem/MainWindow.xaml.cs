@@ -106,13 +106,34 @@ namespace TourismMnangementSystem
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                //MessageBox.Show(e.ToString());
             }
         }
 
         private void cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowAssociatedTourism();
+        }
+
+        private void DelectCityClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "delete from City where id = @CityId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@CityId", cities.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowCities();
+            }
         }
     }
 }
