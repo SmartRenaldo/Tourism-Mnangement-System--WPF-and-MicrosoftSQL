@@ -59,7 +59,7 @@ namespace TourismMnangementSystem
             }
         }
 
-        private void ShowAssociatedTourism()
+        private void ShowAssociatedTourisms()
         {
             try
             {
@@ -112,14 +112,14 @@ namespace TourismMnangementSystem
 
         private void cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShowAssociatedTourism();
+            ShowAssociatedTourisms();
         }
 
         private void DelectCityClick(object sender, RoutedEventArgs e)
         {
             try
             {
-                string query = "delete from City where id = @CityId";
+                string query = "delete from City where Id = @CityId";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlConnection.Open();
                 sqlCommand.Parameters.AddWithValue("@CityId", cities.SelectedValue);
@@ -154,6 +154,92 @@ namespace TourismMnangementSystem
             {
                 sqlConnection.Close();
                 ShowCities();
+            }
+        }
+
+        private void AddTourismToCityClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "insert into CityTourismRelationship values (@CityId, @TourismId)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@CityId", cities.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@TourismId", tourisms.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAssociatedTourisms();
+            }
+        }
+
+        private void AddTourismClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "insert into Tourism values (@Name)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Name", tourismTextBox.Text);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowTourisms();
+            }
+        }
+        
+        private void DeleteTourismClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "delete from Tourism where Id = @TourismId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@TourismId", tourisms.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowTourisms();
+            }
+        }
+
+        private void RemoveCityClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "delete from CityTourismRelationship where CityId = @CityId and TourismId = @TourismId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@CityId", cities.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@TourismId", associatedTourisms.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowAssociatedTourisms();
             }
         }
     }
