@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="700">
     <Grid>
-        <Label Content="City List" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="cities" Margin="10,41,500,262"/>
+        <Label Content="City" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="cities" Margin="10,41,500,262" SelectionChanged="cities_SelectionChanged"/>
+        <Label Content="Tourism" HorizontalAlignment="Left" Margin="236,10,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="associatedTourisms" Margin="236,41,274,262"/>
 
     </Grid>
 </Window>

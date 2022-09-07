@@ -57,5 +57,38 @@ namespace TourismMnangementSystem
                 MessageBox.Show(e.ToString());
             }
         }
+
+        private void ShowAssociatedTourism()
+        {
+            try
+            {
+                string query = "select * from Tourism t left join CityTourismRelationship ctr" +
+                    " on t.Id = ctr.TourismId where ctr.CityId = @CityId";
+
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                SqlDataAdapter adapter = new SqlDataAdapter(sqlCommand);
+
+                using (adapter)
+                {
+                    sqlCommand.Parameters.AddWithValue("@CityId", cities.SelectedValue);
+                    DataTable cityTable = new DataTable();
+
+                    adapter.Fill(cityTable);
+
+                    associatedTourisms.DisplayMemberPath = "Name";
+                    associatedTourisms.SelectedValuePath = "Id";
+                    associatedTourisms.ItemsSource = cityTable.DefaultView;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private void cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowAssociatedTourism();
+        }
     }
 }
