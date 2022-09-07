@@ -1,0 +1,6 @@
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.csproj.AssemblyReference.cache
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.csproj.SuggestedBindingRedirects.cache
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\MainWindow.g.cs
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\App.g.cs
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem_MarkupCompile.cache
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem_MarkupCompile.lref

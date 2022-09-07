@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
 
 namespace TourismMnangementSystem
 {
@@ -23,6 +24,8 @@ namespace TourismMnangementSystem
         public MainWindow()
         {
             InitializeComponent();
+
+            string conncetionString = ConfigurationManager.ConnectionStrings["TourismMnangementSystem.Properties.Settings.TestingDatabase"].ConnectionString;
         }
     }
 }
