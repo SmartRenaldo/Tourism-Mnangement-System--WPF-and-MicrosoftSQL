@@ -11,16 +11,18 @@
         <ListBox x:Name="cities" Margin="33,53,461,199" SelectionChanged="cities_SelectionChanged"/>
         <Label Content="Tourism" HorizontalAlignment="Left" Margin="244,10,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="associatedTourisms" Margin="247,53,247,199"/>
-        <ListBox x:Name="tourisms" Margin="461,53,33,112"/>
+        <ListBox x:Name="tourisms" Margin="461,53,33,75"/>
 
         <Button Content="Delete City" HorizontalAlignment="Left" Margin="33,294,0,0" VerticalAlignment="Top" Width="206" Click="DelectCityClick"/>
-        <Button Content="Add City" HorizontalAlignment="Left" Margin="33,338,0,0" VerticalAlignment="Top" Width="206"/>
-        <Button Content="Update City" HorizontalAlignment="Left" Margin="33,382,0,0" VerticalAlignment="Top" Width="206"/>
+        <Button Content="Add City" HorizontalAlignment="Left" Margin="33,378,0,0" VerticalAlignment="Top" Width="206" Click="AddCityClick"/>
+        <Button Content="Update City" HorizontalAlignment="Left" Margin="33,421,0,0" VerticalAlignment="Top" Width="206"/>
         <Button Content="Remove Tourism" HorizontalAlignment="Left" Margin="247,294,0,0" VerticalAlignment="Top" Width="206"/>
-        <Button Content="Add Tourism City" HorizontalAlignment="Left" Margin="247,338,0,0" VerticalAlignment="Top" Width="206"/>
-        <Button Content="Update Tourism" HorizontalAlignment="Left" Margin="247,382,0,0" VerticalAlignment="Top" Width="206"/>
+        <Button Content="Add Tourism City" HorizontalAlignment="Left" Margin="247,378,0,0" VerticalAlignment="Top" Width="206"/>
+        <Button Content="Update Tourism" HorizontalAlignment="Left" Margin="247,421,0,0" VerticalAlignment="Top" Width="206"/>
         <Button Content="Add Tourism to City" HorizontalAlignment="Left" Margin="461,13,0,0" VerticalAlignment="Top" Width="206"/>
-        <Button Content="Delete Tourism" HorizontalAlignment="Left" Margin="461,382,0,0" VerticalAlignment="Top" Width="206"/>
+        <Button Content="Delete Tourism" HorizontalAlignment="Left" Margin="461,421,0,0" VerticalAlignment="Top" Width="206"/>
+        <TextBox x:Name="cityTextBox" HorizontalAlignment="Left" Margin="33,337,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
+        <TextBox x:Name="tourismTextBox" HorizontalAlignment="Left" Margin="247,337,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="206"/>
 
     </Grid>
 </Window>

@@ -135,5 +135,26 @@ namespace TourismMnangementSystem
                 ShowCities();
             }
         }
+
+        private void AddCityClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "insert into City values (@Name)";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Name", cityTextBox.Text);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowCities();
+            }
+        }
     }
 }
