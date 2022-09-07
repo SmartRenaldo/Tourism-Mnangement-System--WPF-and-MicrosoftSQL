@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TourismMnangementSystem"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="550" Width="700">
+        mc:Ignorable="d" FontSize="20"
+        Title="MainWindow" Height="500" Width="700">
     <Grid>
-        <Label Content="City" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="cities" Margin="10,41,500,262" SelectionChanged="cities_SelectionChanged"/>
-        <Label Content="Tourism" HorizontalAlignment="Left" Margin="236,10,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="associatedTourisms" Margin="236,41,274,262"/>
+        <Label Content="City" HorizontalAlignment="Left" Margin="36,10,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="cities" Margin="36,51,458,201" SelectionChanged="cities_SelectionChanged"/>
+        <Label Content="Tourism" HorizontalAlignment="Left" Margin="247,10,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="associatedTourisms" Margin="250,51,244,201"/>
+        <ListBox x:Name="tourisms" Margin="464,51,36,93"/>
 
     </Grid>
 </Window>

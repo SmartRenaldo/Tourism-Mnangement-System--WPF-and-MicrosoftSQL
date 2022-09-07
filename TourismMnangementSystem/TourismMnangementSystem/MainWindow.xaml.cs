@@ -32,6 +32,7 @@ namespace TourismMnangementSystem
             string conncetionString = ConfigurationManager.ConnectionStrings["TourismMnangementSystem.Properties.Settings.TestingDatabaseConnectionString"].ConnectionString;
             sqlConnection = new SqlConnection(conncetionString);
             ShowCities();
+            ShowTourisms();
         }
 
         private void ShowCities()
@@ -78,6 +79,29 @@ namespace TourismMnangementSystem
                     associatedTourisms.DisplayMemberPath = "Name";
                     associatedTourisms.SelectedValuePath = "Id";
                     associatedTourisms.ItemsSource = cityTable.DefaultView;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+        }
+
+        private void ShowTourisms()
+        {
+            try
+            {
+                string query = "select * from Tourism";
+                SqlDataAdapter sqlAdapter = new SqlDataAdapter(query, sqlConnection);
+
+                using (sqlAdapter)
+                {
+                    DataTable tourismTable = new DataTable();
+                    sqlAdapter.Fill(tourismTable);
+
+                    tourisms.DisplayMemberPath = "Name";
+                    tourisms.SelectedValuePath = "Id";
+                    tourisms.ItemsSource = tourismTable.DefaultView;
                 }
             }
             catch (Exception e)
