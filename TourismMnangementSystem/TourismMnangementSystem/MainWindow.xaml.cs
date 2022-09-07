@@ -25,7 +25,7 @@ namespace TourismMnangementSystem
         {
             InitializeComponent();
 
-            string conncetionString = ConfigurationManager.ConnectionStrings["TourismMnangementSystem.Properties.Settings.TestingDatabase"].ConnectionString;
+            string conncetionString = ConfigurationManager.ConnectionStrings["TourismMnangementSystem.Properties.Settings.TestingDatabaseConnectionString"].ConnectionString;
         }
     }
 }

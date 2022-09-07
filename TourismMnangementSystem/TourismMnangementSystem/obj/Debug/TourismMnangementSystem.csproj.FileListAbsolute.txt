@@ -4,3 +4,13 @@ C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\
 C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\App.g.cs
 C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem_MarkupCompile.cache
 C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem_MarkupCompile.lref
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\bin\Debug\TourismMnangementSystem.exe.config
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\bin\Debug\TourismMnangementSystem.exe
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\bin\Debug\TourismMnangementSystem.pdb
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\MainWindow.baml
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.g.resources
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.Properties.Resources.resources
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.csproj.GenerateResource.cache
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.csproj.CoreCompileInputs.cache
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.exe
+C:\Projects\Tourism Mnangement System--WPF&MicrosoftSQL\TourismMnangementSystem\TourismMnangementSystem\obj\Debug\TourismMnangementSystem.pdb
