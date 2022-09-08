@@ -242,5 +242,49 @@ namespace TourismMnangementSystem
                 ShowAssociatedTourisms();
             }
         }
+
+        private void UpdateTourismClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "update Tourism set Name = @Name where Id = @TourismId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Name", tourismTextBox.Text);
+                sqlCommand.Parameters.AddWithValue("@TourismId", tourisms.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowTourisms();
+            }
+        }
+
+        private void UpdateCityClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string query = "update City set Name = @Name where Id = @CityId";
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlConnection.Open();
+                sqlCommand.Parameters.AddWithValue("@Name", cityTextBox.Text);
+                sqlCommand.Parameters.AddWithValue("@CityId", cities.SelectedValue);
+                sqlCommand.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                sqlConnection.Close();
+                ShowCities();
+            }
+        }
     }
 }
