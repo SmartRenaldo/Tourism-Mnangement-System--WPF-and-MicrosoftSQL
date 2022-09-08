@@ -264,6 +264,7 @@ namespace TourismMnangementSystem
             {
                 sqlConnection.Close();
                 ShowTourisms();
+                ShowAssociatedTourisms();
             }
         }
 
