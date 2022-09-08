@@ -113,6 +113,7 @@ namespace TourismMnangementSystem
         private void cities_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowAssociatedTourisms();
+            ShowSelectedCityInTextBox();
         }
 
         private void DelectCityClick(object sender, RoutedEventArgs e)
@@ -124,10 +125,6 @@ namespace TourismMnangementSystem
                 sqlConnection.Open();
                 sqlCommand.Parameters.AddWithValue("@CityId", cities.SelectedValue);
                 sqlCommand.ExecuteScalar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
             }
             finally
             {
@@ -284,6 +281,22 @@ namespace TourismMnangementSystem
             {
                 sqlConnection.Close();
                 ShowCities();
+            }
+        }
+
+        private void ShowSelectedCityInTextBox()
+        {
+            string query = "select Name from City where Id = @Id";
+
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+            using (sqlDataAdapter)
+            {
+                sqlCommand.Parameters.AddWithValue("@Id", cities.SelectedValue);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                cityTextBox.Text = dataTable.Rows[0]["Name"].ToString();
             }
         }
     }
