@@ -55,7 +55,7 @@ namespace TourismMnangementSystem
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+
             }
         }
 
@@ -83,7 +83,7 @@ namespace TourismMnangementSystem
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                
             }
         }
 
@@ -114,6 +114,11 @@ namespace TourismMnangementSystem
         {
             ShowAssociatedTourisms();
             ShowSelectedCityInTextBox();
+        }
+        
+        private void tourisms_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowSelectedTourismInTextBox();
         }
 
         private void DelectCityClick(object sender, RoutedEventArgs e)
@@ -244,11 +249,11 @@ namespace TourismMnangementSystem
         {
             try
             {
-                string query = "update Tourism set Name = @Name where Id = @TourismId";
+                string query = "update Tourism set Name = @Name where Id = @Id";
                 SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
                 sqlConnection.Open();
                 sqlCommand.Parameters.AddWithValue("@Name", tourismTextBox.Text);
-                sqlCommand.Parameters.AddWithValue("@TourismId", tourisms.SelectedValue);
+                sqlCommand.Parameters.AddWithValue("@Id", tourisms.SelectedValue);
                 sqlCommand.ExecuteScalar();
             }
             catch (Exception ex)
@@ -297,6 +302,22 @@ namespace TourismMnangementSystem
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
                 cityTextBox.Text = dataTable.Rows[0]["Name"].ToString();
+            }
+        }
+
+        private void ShowSelectedTourismInTextBox()
+        {
+            string query = "select Name from Tourism where Id = @Id";
+
+            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+
+            using (sqlDataAdapter)
+            {
+                sqlCommand.Parameters.AddWithValue("@Id", tourisms.SelectedValue);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                tourismTextBox.Text = dataTable.Rows[0]["Name"].ToString();
             }
         }
     }

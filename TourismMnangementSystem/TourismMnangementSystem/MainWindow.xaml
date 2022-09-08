@@ -40,7 +40,7 @@
         <Button Content="Remove Tourism" Margin="5, 5" Click="RemoveCityClick" Grid.Column="2" Grid.Row="5"/>
 
         <Button Content="Add Tourism to City" Margin="5, 5" Click="AddTourismToCityClick" Grid.Column="3" Grid.Row="0"/>
-        <ListBox x:Name="tourisms" Margin="5, 5" Grid.Column="3" Grid.Row="1" Grid.RowSpan="4"/>
+        <ListBox x:Name="tourisms" Margin="5, 5" Grid.Column="3" SelectionChanged="tourisms_SelectionChanged" Grid.Row="1" Grid.RowSpan="4"/>
         <Button Content="Delete Tourism" Margin="5, 5" Click="DeleteTourismClick" Grid.Column="3" Grid.Row="5"/>
 
     </Grid>
